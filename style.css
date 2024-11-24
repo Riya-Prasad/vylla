@@ -11,7 +11,7 @@
   --small-text: 18px;
   --link-text: 16px;
   --heading-color: #2c2c2c;
-  --light-color: #f8f8f8;
+  --lignavbat-color: #f8f8f8;
   --body-color: #5a5858;
 }
 
@@ -72,7 +72,8 @@ body {
 /* A elements that don't have a class get default styles */
 a:not([class]) {
   text-decoration: none;
-  text-decoration-skip-ink: auto;
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
 }
 
 /* Make images easier to work with */
@@ -209,10 +210,13 @@ section {
 .navbar .navbar-container .menu-items li a {
   text-decoration: none;
   color: var(--body-color);
+  transition: -webkit-text-decoration 0.2s ease-out;
   transition: text-decoration 0.2s ease-out;
+  transition: text-decoration 0.2s ease-out, -webkit-text-decoration 0.2s ease-out;
 }
 .navbar .navbar-container .menu-items li a:hover {
-  text-decoration: line-through wavy var(--light-color);
+  -webkit-text-decoration: line-through wavy var(--light-color);
+          text-decoration: line-through wavy var(--light-color);
 }
 
 @media (max-width: 548px) {
@@ -325,7 +329,8 @@ section {
   position: absolute;
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .hero .container .grid .right-side .hero-img {
   position: relative;
@@ -338,7 +343,8 @@ section {
   overflow: hidden;
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .services-sec .container .services-heading {
@@ -351,8 +357,10 @@ section {
 .services-sec .container .services {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 2em;
+  -moz-column-gap: 2em;
+       column-gap: 2em;
   row-gap: 5em;
+  width: -moz-fit-content;
   width: fit-content;
   margin: 5em auto 0;
 }
@@ -382,7 +390,8 @@ section {
   position: absolute;
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .services-sec .container .services .service .service-heading {
   font-size: var(--secondary-heading);
@@ -446,7 +455,8 @@ section {
   position: absolute;
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .values-sec .container .values-heading {
   align-items: center;
@@ -474,7 +484,8 @@ section {
   position: absolute;
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .values-sec .container .grid .right-side .values {
   flex-direction: column;
@@ -537,7 +548,8 @@ section {
   position: absolute;
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .news-sec .container .flex {
@@ -574,7 +586,8 @@ section {
   overflow: hidden;
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .news-sec .container .grid .news .news-heading {
   font-size: var(--secondary-heading);
@@ -616,7 +629,8 @@ section {
   cursor: pointer;
 }
 .footer .container .grid .left-sec .socials .social:hover {
-  text-decoration: line-through wavy var(--light-color);
+  -webkit-text-decoration: line-through wavy var(--light-color);
+          text-decoration: line-through wavy var(--light-color);
 }
 .footer .container .grid .right-sec .columns {
   border: 0;
@@ -634,7 +648,8 @@ section {
   cursor: pointer;
 }
 .footer .container .grid .right-sec .columns .column .footer-links .footer-item:hover {
-  text-decoration: line-through wavy var(--light-color);
+  -webkit-text-decoration: line-through wavy var(--light-color);
+          text-decoration: line-through wavy var(--light-color);
 }
 .footer .container .footer-rights {
   flex-direction: row;
@@ -665,7 +680,8 @@ section {
     margin: 0 auto;
   }
   .services-sec .container .services {
-    column-gap: 0;
+    -moz-column-gap: 0;
+         column-gap: 0;
   }
   .services-sec .container .services .service .flex .service-body {
     width: 25ch;
@@ -694,7 +710,8 @@ section {
 }
 @media (max-width: 648px) {
   .services-sec .container .services {
-    column-gap: 0;
+    -moz-column-gap: 0;
+         column-gap: 0;
   }
   .services-sec .container .services .service .flex .service-body {
     width: 21ch;
